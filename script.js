@@ -41,7 +41,7 @@ const startDetection = async () => {
 
     // Detecção otimizada usando `requestAnimationFrame`
     const detectFaces = async (roi) => {
-        const detections = await faceapi
+        const faceAIData = await faceapi
             .detectAllFaces(videoCam, new faceapi.TinyFaceDetectorOptions(), roi)
             .withFaceLandmarks()
             .withFaceDescriptors();
