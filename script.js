@@ -54,7 +54,11 @@ const startDetection = async () => {
         const results = resizedResults.map(d => faceMatcher.findBestMatch(d.descriptor));
         results.forEach((result, i) => {
             const box = resizedResults[i].detection.box;
-            const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() });
+            let label = result.toString();
+            if (label.includes("unknown")) {
+                label = "Face não autenticada...";
+            }
+            const drawBox = new faceapi.draw.DrawBox(box, { label: label });
             drawBox.draw(canvas);
         })
 
