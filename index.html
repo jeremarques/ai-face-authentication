@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reconhecimento de Emoções com IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script defer src="face-api.min.js"></script>
     <script defer src="script.js"></script>
     <style>
@@ -15,13 +18,51 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: url('./bg-01.jpg') center/cover no-repeat;
         }
         canvas{
             position: absolute;
         }
+        .inter-800 {
+            font-family: "Inter", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+        .inter-500 {
+            font-family: "Inter", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content h1 {
+            color: #fff;
+            line-height: 0;
+        }
+        .content .text {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: #dadada;
+        }
     </style>
 </head>
 <body>
-    <video id="video-cam" width="720" height="560" autoplay muted></video>
+    <div class="content">
+        <div class="text">
+            <h1 class="inter-800">1º Feira das Profissões - CPR</h1>
+            <p class="inter-500">
+                Reconhecimento Facial com IA na autenticação de pessoas <br><br>
+                Se a pessoa for autorizada aparecerá o nome, se não, mostrará uma mensagem "Face não autenticada".
+            </p>
+        </div>
+        <video id="video-cam" width="720" height="560" autoplay muted></video>
+    </div>
 </body>
 </html>
