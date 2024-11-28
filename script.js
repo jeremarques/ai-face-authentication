@@ -71,7 +71,7 @@ const startDetection = async () => {
 };
 
 function loadLabeledImages() {
-    const labels = ['Jeremias'];
+    const labels = ['Jeremias', 'Yuri'];
     return Promise.all(
         labels.map(async label => {
             const descriptions = [];
